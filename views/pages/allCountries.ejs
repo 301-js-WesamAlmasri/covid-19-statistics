@@ -1,0 +1,22 @@
+<%- include('../layout/header.ejs') %> 
+    <% allCountriesStatistics.forEach(country => { %> 
+    <div class="country_container">
+        <h2><%= country.country %> </h2>
+        <div class="country_card">
+            <p>Total Confirmed: <%= country.totalConfirmed %> </p>
+            <p>Total Deaths: <%= country.totalDeaths %> </p>
+            <p>Total Recovered: <%= country.totalRecovered %> </p>
+            <p>Date: <%= new Date(country.date).toISOString().split('T')[0] %> </p>
+        </div>
+        <form action="/save-card" method="post">
+            <input type="hidden" name="country" value="<%= country.country %>">
+            <input type="hidden" name="totalConfirmed" value="<%= country.totalConfirmed %>">
+            <input type="hidden" name="totalDeaths" value="<%= country.totalDeaths %>">
+            <input type="hidden" name="totalRecovered" value="<%= country.totalRecovered %>">
+            <input type="hidden" name="date" value="<%= country.date %>">
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <% }) %> 
+<%- include('../layout/footer.ejs') %> 
+    

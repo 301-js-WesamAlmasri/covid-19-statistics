@@ -1,0 +1,12 @@
+<%- include('../layout/header.ejs') %> 
+    <div class="country_result_container">
+        <h2><%= countryConfermedCases[0].country %> </h2>
+        <% countryConfermedCases.forEach(item => { %> 
+        <div class="country_result_card">
+            <p>Date: <%= new Date(item.date).toISOString().split('T')[0] %> </p>
+            <p>Cases: <%= item.cases %> </p>
+        </div>
+        <% }) %> 
+    </div>
+<%- include('../layout/footer.ejs') %> 
+    

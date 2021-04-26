@@ -1,0 +1,18 @@
+<%- include('../layout/header.ejs') %> 
+    <div class="totalCard">
+        <h2>Total World Statistics</h2>
+        <p>TotalConfirmed: <%= totalWordStatistics.totalConfirmed %> </p>
+        <p>TotalDeaths: <%= totalWordStatistics.totalDeaths %> </p>
+        <p>TotalRecovered: <%= totalWordStatistics.totalRecovered %></p>
+    </div>
+
+    <form action="/get-country-result" method="post">
+        <input type="text" name= counrty placeholder="Enter the conutry's name">
+        <label for="from">From:</label>
+        <input type="date" name="from" id="from">
+        <label for="to">To: </label>
+        <input type="date" name="to" id="to">
+        <input type="submit" value="Search">
+    </form>
+<%- include('../layout/footer.ejs') %> 
+    
