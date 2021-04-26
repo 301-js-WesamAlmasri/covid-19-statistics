@@ -6,8 +6,9 @@
         <p>TotalRecovered: <%= totalWordStatistics.totalRecovered %></p>
     </div>
 
-    <form action="/get-country-result" method="post">
-        <input type="text" name= counrty placeholder="Enter the conutry's name">
+    <form class="get-contry-form" action="/get-country-result" method="post">
+        <label for="conutry">Conutry:</label>
+        <input type="text" id="conutry" name= counrty placeholder="Enter the conutry's name">
         <label for="from">From:</label>
         <input type="date" name="from" id="from">
         <label for="to">To: </label>

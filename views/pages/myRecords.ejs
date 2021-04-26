@@ -1,10 +1,11 @@
-<%- include('../layout/header.ejs') %> 
-    <% allCountriesStatistics.forEach(country => { %> 
-    <div class="country_container">
-        <h2><%= country.country %> </h2>
-        <p>Date: <%= new Date(country.date).toISOString().split('T')[0] %> </p>
-        <a href="/record-details/<%= country.id %> ">Details</a>
-    </div>
-    <% }) %> 
-<%- include('../layout/footer.ejs') %> 
-    
+<%- include('../layout/header.ejs') %>
+<div class="my_records_container">
+  <% allCountriesStatistics.forEach(country => { %>
+  <div class="country_container">
+    <h2><%= country.country %></h2>
+    <p>Date: <%= new Date(country.date).toISOString().split('T')[0] %></p>
+    <a href="/record-details/<%= country.id %> ">Details</a>
+  </div>
+  <% }) %>
+</div>
+<%- include('../layout/footer.ejs') %>

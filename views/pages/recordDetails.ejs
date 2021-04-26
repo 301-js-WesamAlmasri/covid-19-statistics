@@ -6,25 +6,23 @@
             <p>Total Deaths Cases: <%= countryDetails.totaldeaths %> </p>
             <p>Total Recovered Cases: <%= countryDetails.totalrecovered %> </p>
             <p>Date: <%= new Date(countryDetails.date).toISOString().split('T')[0] %> </p>
-            <a id="update_btn" >Update</a>
             <form action="/delete-record/<%= countryDetails.id %>?_method=delete" method="post">
                 <input type="submit" value="Delete">
             </form>
-
-            <form action="/update-record/<%= countryDetails.id %>?_method=put" method="post">
-                <label for="">Country</label>
-                <input type="text" name="country" value="<%= countryDetails.country %>">
-                <label for="">Total Confirmed</label>
-                <input type="number" name="totalConfirmed" value="<%= countryDetails.totalconfirmed %>">
-                <label for="">Total Deaths</label>
-                <input type="number" name="totalDeaths" value="<%= countryDetails.totaldeaths %>">
-                <label for="">Total Recovered</label>
-                <input type="number" name="totalRecovered" value="<%= countryDetails.totalrecovered %>">
-                <label for="">Date</label>
-                <input type="date" name="date" value="<%= new Date(countryDetails.date).toISOString().split('T')[0] %>">
-                <input type="submit" value="Update">
-            </form>
         </div>
+        <form class="update-record-form" action="/update-record/<%= countryDetails.id %>?_method=put" method="post">
+            <label for="">Country</label>
+            <input type="text" name="country" value="<%= countryDetails.country %>">
+            <label for="">Total Confirmed</label>
+            <input type="number" name="totalConfirmed" value="<%= countryDetails.totalconfirmed %>">
+            <label for="">Total Deaths</label>
+            <input type="number" name="totalDeaths" value="<%= countryDetails.totaldeaths %>">
+            <label for="">Total Recovered</label>
+            <input type="number" name="totalRecovered" value="<%= countryDetails.totalrecovered %>">
+            <label for="">Date</label>
+            <input type="date" name="date" value="<%= new Date(countryDetails.date).toISOString().split('T')[0] %>">
+            <input type="submit" value="Update">
+        </form>
     </div>
 <%- include('../layout/footer.ejs') %> 
     
